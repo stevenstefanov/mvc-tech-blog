@@ -1,7 +1,9 @@
+// Declare dependencies
 const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Set up post routes to create a new post and delete a single post
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({...req.body, user_id: req.session.user_id});
@@ -32,4 +34,5 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Exports
 module.exports = router;
