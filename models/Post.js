@@ -1,8 +1,10 @@
+// Declare dependencies
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
+// Define the Post class
 Post.init(
   {
     id: {
@@ -11,11 +13,11 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    body: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -40,4 +42,5 @@ Post.init(
   }
 );
 
+// Exports
 module.exports = Post;
