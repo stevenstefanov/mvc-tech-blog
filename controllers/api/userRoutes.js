@@ -1,6 +1,8 @@
+// Declare dependencies
 const router = require("express").Router();
 const { User } = require("../../models");
 
+// Set up user routes to homepage, login, logout
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
