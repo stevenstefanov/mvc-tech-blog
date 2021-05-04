@@ -15,8 +15,7 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      posts, 
-      logged_in: req.session.logged_in 
+      posts, logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -47,10 +46,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
+    res.render('profile', { ...user, logged_in: true});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -61,7 +57,6 @@ router.get('/login', (req, res) => {
     res.redirect('/profile');
     return;
   }
-
   res.render('login');
 });
 
