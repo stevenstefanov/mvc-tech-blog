@@ -15,17 +15,4 @@ router.post("/:userid/:postid", async (req, res) => {
     }
 });
 
-
-// This deletes a comment by its specific id
-router.delete("/:id", async (req, res) => {
-    try {
-        const deletedComment = await Comment.destroy({
-                where: { id: req.params.id }
-        });
-        res.status(200).json(deletedComment);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-})
-
 module.exports = router;
