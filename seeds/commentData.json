@@ -1,0 +1,17 @@
+[
+    {
+        "user_id": 1,
+        "post_id": 2,
+        "content": "I like this post!"
+    },
+    {
+        "user_id": 2,
+        "post_id": 1,
+        "content": "This post was very informative!"
+    },
+    {
+        "user_id": 1,
+        "post_id": 1,
+        "content": "Thank you!"
+    }
+]

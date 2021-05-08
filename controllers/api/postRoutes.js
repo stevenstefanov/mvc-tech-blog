@@ -1,6 +1,6 @@
 // Declare dependencies
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Set up post routes to create a new post and delete a single post

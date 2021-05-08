@@ -1,13 +1,18 @@
 // Declare dependencies
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Get all posts and join with user data
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [{ model: User, attributes: ['name'] }]
+      include: [
+        { model: User, attributes: ['name'] },
+        { model: Comment, as: "post_comments",
+          include: { model: User, as: "comment_creator", attributes: ['name']}
+        }
+      ]
     });
 
     // Serialize data so the template can read it
@@ -25,11 +30,13 @@ router.get('/', async (req, res) => {
 router.get('/posts/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      include: [{ model: User, attributes: ['name'] }]
+      include: [{ model: User, attributes: ['name'] },
+        { model: Comment, as: "post_comments",
+          include: { model: User, as: "comment_creator", attributes: ['name'] }
+        }
+      ]
     });
-
     const post = postData.get({ plain: true });
-
     res.render('post', { ...post, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
