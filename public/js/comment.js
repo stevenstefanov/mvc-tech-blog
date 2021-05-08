@@ -1,16 +1,16 @@
 const createComment = async (event) => {
     event.stopPropagation();
 
-    const userId = document.querySelector(".user-profile").getAttribute("data-currentuser");
-    console.log(userId);
-    const postId = event.target.getAttribute("data-postid");
-    console.log(postId);
-    const commentContent = document.querySelector(".input-comment").value;
-    console.log(commentContent);
+    const userid = document.querySelector(".user-profile").getAttribute("data-currentuser");
+    console.log(userid);
+    const postid = event.target.getAttribute("data-postid");
+    console.log(postid);
+    const content = document.querySelector(".input-comment").value;
+    console.log(content);
 
-    const response = await fetch(`/api/comments/${userId}/${postId}`, {
+    const response = await fetch(`/api/comments/${userid}/${postid}`, {
         method: "POST",
-        body: JSON.stringify({ userId, postId, commentContent }),
+        body: JSON.stringify({ userid, postid, content }),
         headers: { "Content-Type": "application/json" }
     });
     if (response.ok) {
