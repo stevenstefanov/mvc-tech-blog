@@ -1,4 +1,4 @@
-<div class="text-center">
+<div class="text-center" data-postid={{id}}>
   <h2>{{title}}</h2>
   <p>Written by {{user.name}} on {{format_date date_created}}</p>
   <p>{{body}}</p>
@@ -9,7 +9,7 @@
 {{!-- {{#each postData.post_comments}} --}}
 {{#each post_comments}}
   <div data-userid="{{user_id}}" id="comment" class=" my-3 card" style="width: 50rem;">
-    <div class="card-body">
+    <div class="card-body" >
       <h6 class="card-subtitle mb-2 text-muted">{{comment_creator.name}} on {{format_date date_created}}</h6>
       <p class="card-text input-content-{{id}}">{{content}}</p>
 
@@ -22,7 +22,7 @@
   <textarea class="input-comment form-control new-blog-title" placeholder="Leave a comment..." id="floatingTextarea2" style="height:10vh"></textarea>
 </div>
 
-<button class="btn btn-primary new-comment">Comment</button>
+<button class="btn btn-primary new-comment" data-postid="{{id}}">Comment</button>
 
 <script src="../js/comment.js"></script>
 {{/if}}
