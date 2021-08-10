@@ -1,28 +1,8 @@
 # Tech Blog MVC
 
-## What is the project?
+## Project Description
 
 This is a tech blog that follows the MVC structure. In this project, a user can view a list posted blog posts, the user can click into one of the posts to see more detailed information. The user has the option to login or create a new account. When logged in. the user can view their dashboard where they can see posts they have created or create a new post. The user can also comment on posts when logged in.
-
-## What were the challenges?
-
-Sending information from the DOM to the database was one of the most challenging things for me. Another chanllege was polling the correct information into the handlebars file.
-
-## What was updated?
-
-This project was created from scratch. The only code that was recycled was previously used CSS styling.
-
-## Why did I decide to do this project?
-
-This project was really interesting as I frequent tech blogs. In addition, I was also very curious about how to go about handling multiple users and user registration on a site.
-
-## What I learned in the process?
-
-Throughout this project I learned a lot more about CRUD operations and DOM manipulation.
-
-## What makes this project stand out?
-
-This project is a good example of how to create a website with authentication, password encryption, database and server access. It is a fully functioning full-stack application.
 
 ## Project Screenshots
 
@@ -38,13 +18,25 @@ This project is a good example of how to create a website with authentication, p
 
 https://morning-bayou-73467.herokuapp.com/
 
+## Background
+
+This project was really interesting as I frequent tech blogs. In addition, I was also very curious about how to go about handling multiple users and user registration on a site.
+
+## Learnings
+
+Throughout this project I learned a lot more about CRUD operations and DOM manipulation.
+
+## Challenges
+
+Sending information from the DOM to the database was one of the most challenging things for me. Another chanllege was polling the correct information into the handlebars file.
+
 ## Usage
 
 Follow the above Heroku link to the fully deployed application. Once on the app, the user can freely navigate between the homepage, individual bog post pages, the login page or the dashboard page.
 
 ## Credits
 
-Thank you to Columbia's Full-Stack Web Developer bootcamp for all the assistance and for teaching me all that I have learned. Credit also goes to Google for helping me find any needed resource.
+Thank you to Columbia's Full-Stack Web Developer bootcamp for all the assistance and for teaching me all that I have learned.
 
 ## Licence
 
